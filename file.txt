@@ -1,0 +1,4 @@
+::f::bar
+::a::/path/to/file.txt
+::b::bla
+::g::some/stuff
