@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// save file contents to variable
+// save file contents to string pointer
 char *readFile(char *filename) {
     FILE *f = fopen(filename, "rt");
 
@@ -22,14 +22,16 @@ char *readFile(char *filename) {
     return buffer;
 }
 
-int main() {
-    char *str = readFile("file.txt");
-    char **array = NULL;
-    char *p = strtok (str, "::");
-    int n_spaces = 0;
-    int i;
+typedef struct {
+    char **elements;
+    int length;
+} splitArray;
 
-    /* split string and append tokens to 'array' */
+splitArray split(char *str, char *delimiter) {
+    char **array = NULL;
+    char *p = strtok(str, delimiter);
+    int n_spaces = 0;
+    splitArray arr;
 
     while (p) {
       array = realloc (array, sizeof (char*) * ++n_spaces);
@@ -53,11 +55,23 @@ int main() {
     array = realloc (array, sizeof (char*) * (n_spaces + 1));
     array[n_spaces] = 0;
 
-    for (i = 0; i < (n_spaces+1); ++i)
+    arr.elements = array;
+    arr.length = n_spaces;
+
+    return arr;
+}
+
+int main() {
+    char *str = readFile("file.txt");
+    splitArray arr = split(str, "::");
+    char **array = arr.elements;
+    int column = arr.length;
+    int i;
+
+    for (i = 0; i < column; ++i)
       printf ("array[%d] = %s\n", i, array[i]);
 
     /* free the memory allocated */
-    free(str);
     free (array);
     return 0;
 }
