@@ -1,8 +1,0 @@
-::f::bar
-::a::/path/to/file.txt
-::b::bla
-::g::some/stuff
-::g::some/stuff
-::r::some/cool/stuff
-::b::some/other/stuff
-::g::some/stuff
