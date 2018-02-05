@@ -15,7 +15,7 @@ int main()
 
     refresh();
 
-    // white key is different from ESC
+    // ESC has code 27
     while((c = getch()) != 27) {
         mvprintw(24, 0, "Character pressed is = %3d. Hopefully it can be printed as '%c'", c, c);
         refresh();
