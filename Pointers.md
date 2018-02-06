@@ -52,7 +52,7 @@ For an integer or float `++ip` or `++flp` adds 4 bytes to the address.
 
 Following example from: http://cslibrary.stanford.edu/106/#c
 
-The pointers x and y are allocated as local variables. The type `int*` means "pointer which points to ints". As Binky learns, the pointers do not automatically get pointees. The pointee for x is dynamically allocated separately with the standard library function malloc(). The syntax `*x` dereferences `x` to access its pointee.
+The pointers x and y are allocated as local variables. The type `int*` means "pointer which points to ints". The pointers do not automatically get pointees. The pointee for x is dynamically allocated separately with the standard library function malloc(). The syntax `*x` dereferences `x` to access its pointee.
 
 ```c
 #include <stdio.h>

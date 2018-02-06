@@ -1,4 +1,5 @@
-### C - study notes and snippets
+### C - study notes, books and snippets
 
-[pointers](Pointers.md)
+[intro on pointers](Pointers.md)
+[pointers and memory](pointers_and_memory.pdf)
 
